@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JB Plumbing and Heating | Professional Plumbing Services",
     description:
-      "Trusted plumbing and heating specialists serving [Your Location] with quality workmanship and competitive pricing.",
+      "Trusted plumbing and heating specialists serving London with quality workmanship and competitive pricing.",
     url: "https://www.jbplumbingandheating.com", // Update with your actual domain
     siteName: "JB Plumbing and Heating",
     images: [
       {
-        url: "images/site-logo.png", // Consider using an actual image rather than SVG for social sharing
+        url: "/images/site-logo.png", // Added leading slash
         width: 1200,
         height: 630,
         alt: "JB Plumbing and Heating",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JB Plumbing and Heating | Professional Services",
     description:
-      "Reliable plumbing and heating solutions for homes and businesses in [Your Location].",
-    images: ["images/site-logo.png"], // Consider using an actual image rather than SVG
+      "Reliable plumbing and heating solutions for homes and businesses in London.",
+    images: ["/images/site-logo.png"], // Added leading slash
   },
   robots: {
     index: true,
