@@ -1,0 +1,76 @@
+/* Services.module.css */
+.servicesSection {
+  padding-inline: 6rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f9fbfe;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.line {
+  height: 2px;
+  width: 8rem;
+  background: linear-gradient(90deg, #4caf50, #2196f3);
+  display: inline-block;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .servicesSection {
+    padding-inline: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding-inline: 2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .servicesSection {
+    padding-inline: 1.5rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+}

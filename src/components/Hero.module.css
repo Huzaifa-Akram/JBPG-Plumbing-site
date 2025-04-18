@@ -1,0 +1,259 @@
+.heroSection {
+  background-color: #f0f8ff;
+  padding: 4rem 0 0 0;
+  width: 100%;
+}
+
+.heroContainer {
+  margin: 0 auto;
+  padding-inline: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.companyName {
+  color: #62c46f;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: 48px;
+  line-height: 54px;
+  margin-bottom: 1.5rem;
+  color: #333;
+
+  font-family: "Nunito", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+.professional {
+  color: #29aae3;
+  font-weight: 700;
+}
+
+.accent {
+  color: #29aae3;
+}
+
+.heroDescription {
+  color: #555;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 2rem;
+}
+
+.heroCTA {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.serviceFeatures {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #29aae3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureIcon img {
+  filter: brightness(0) invert(1); /* This makes SVGs white */
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.featureText {
+  font-weight: 500;
+}
+
+.buttonContainer {
+  margin-top: 1rem;
+}
+
+.contactButton {
+  display: inline-block;
+  background-color: #29aae3;
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(20, 45, 86, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+  background-color: #1a8bb5;
+  transform: translateY(-2px);
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.heroImage img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media Queries for Responsive Design */
+
+@media screen and (max-width: 1024px) {
+  .heroTitle {
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+
+  .heroContainer {
+    padding: 0 1.5rem;
+  }
+
+  .heroImage img {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroSection {
+    padding: 3rem 0 0 0;
+  }
+  .heroContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .heroContent {
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .serviceFeatures {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .heroImage {
+    justify-content: center;
+  }
+
+  .heroImage img {
+    max-width: 80%;
+  }
+
+  .companyName {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .heroDescription {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroSection {
+    padding: 2rem 0 0 0;
+  }
+  .heroTitle {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .featureItem {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .serviceFeatures {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .heroImage img {
+    max-width: 70%;
+  }
+
+  .contactButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .featureIcon img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .featureText {
+    font-size: 0.85rem;
+  }
+
+  .companyName {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .heroSection {
+    padding: 1.5rem 0 0 0;
+  }
+  .heroImage img {
+    max-width: 55%;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .featureItem {
+    padding: 0.3rem 0.7rem;
+  }
+}
