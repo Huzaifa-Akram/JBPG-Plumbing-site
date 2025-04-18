@@ -46,9 +46,9 @@ const Reviews: React.FC = () => {
               </div>
               <div className={styles.reviewContent}>
                 <p className={styles.reviewText}>
-                  "I have used JB plumbing and he has done a brilliant job in my
+                  &ldquo;I have used JB plumbing and he has done a brilliant job in my
                   bathroom. All the bath fixtures fixed and replaced, excellent
-                  job. Very polite and friendly man. Thanks."
+                  job. Very polite and friendly man. Thanks.&rdquo;
                 </p>
               </div>
             </div>
@@ -70,9 +70,9 @@ const Reviews: React.FC = () => {
               </div>
               <div className={styles.reviewContent}>
                 <p className={styles.reviewText}>
-                  "It serviced and repaired my mum's boiler. Excellent work,
+                  &ldquo;It serviced and repaired my mum&rsquo;s boiler. Excellent work,
                   punctual, patient, very knowledgeable and polite to me and my
-                  mum"
+                  mum&rdquo;
                 </p>
               </div>
             </div>
@@ -97,11 +97,11 @@ const Reviews: React.FC = () => {
               </div>
               <div className={styles.reviewContent}>
                 <p className={styles.reviewText}>
-                  "The booster pump at my home was dying and I needed a new pump
+                  &ldquo;The booster pump at my home was dying and I needed a new pump
                   installation. He was very professional and did a high standard
                   job. He also fixed the manufacturing fault causing water
                   leaking from the pump hose. I highly recommend him and planned
-                  further work with him."
+                  further work with him.&rdquo;
                 </p>
               </div>
             </div>
@@ -123,9 +123,9 @@ const Reviews: React.FC = () => {
               </div>
               <div className={styles.reviewContent}>
                 <p className={styles.reviewText}>
-                  "I have used JB plumbing and he has done a brilliant job in my
+                  &ldquo;I have used JB plumbing and he has done a brilliant job in my
                   bathroom. All the bath fixtures fixed and replaced, excellent
-                  job. Very polite and friendly man. Thanks."
+                  job. Very polite and friendly man. Thanks.&rdquo;
                 </p>
               </div>
             </div>
