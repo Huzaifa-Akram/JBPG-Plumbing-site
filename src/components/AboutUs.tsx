@@ -24,20 +24,21 @@ const AboutUs = () => {
             <h2 className={styles.sectionTitle}>About Us</h2>
 
             <p className={styles.mainParagraph}>
-              When summer's heat rolls in, your home still deserves comfort
-              without the drama. At JB Plumbing & Heating Specialists, we've
-              been London's trusted heating and plumbing experts for over 20
-              years, the team you call when you want service that's fast,
-              friendly, and flawless. Whether it's a boiler check-up before
-              winter, a sudden leak in July, or upgrading to a smarter system,
-              we make it simple with no jargon and no surprises.
+              When summer&apos;s heat rolls in, your home still deserves comfort
+              without the drama. At JB Plumbing & Heating Specialists,
+              we&apos;ve been London&apos;s trusted heating and plumbing experts
+              for over 20 years, the team you call when you want service
+              that&apos;s fast, friendly, and flawless. Whether it&apos;s a
+              boiler check-up before winter, a sudden leak in July, or upgrading
+              to a smarter system, we make it simple with no jargon and no
+              surprises.
             </p>
 
             <p className={styles.secondaryParagraph}>
-              Your comfort shouldn't depend on luck. That's why we warranty
-              every repair and only recommend services we'd trust in our own
-              homes, because reliable plumbing and heating should be effortless,
-              year-round.
+              Your comfort shouldn&apos;t depend on luck. That&apos;s why we
+              warranty every repair and only recommend services we&apos;d trust
+              in our own homes, because reliable plumbing and heating should be
+              effortless, year-round.
             </p>
 
             <div className={styles.servicesContainer}>

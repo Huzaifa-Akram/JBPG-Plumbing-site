@@ -3,6 +3,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || "https://www.jbplumbingandheating.com"
+  ),
   title: "JB Plumbing and Heating | Professional Plumbing Services",
   description:
     "Professional plumbing and heating services in [Your Location]. Expert solutions for residential and commercial properties with 24/7 emergency support.",

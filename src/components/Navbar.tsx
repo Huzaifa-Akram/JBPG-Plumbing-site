@@ -6,12 +6,11 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // Function to check if window width is mobile size
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
+      // We'll just remove it since it's not being used
     };
 
     // Initial check

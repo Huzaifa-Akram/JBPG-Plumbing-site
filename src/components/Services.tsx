@@ -1,6 +1,5 @@
 // Services.tsx
 import React from "react";
-import Image from "next/image";
 import styles from "./Services.module.css";
 import ServiceCard from "./ServiceCard";
 import { serviceData } from "../data/servicedata";

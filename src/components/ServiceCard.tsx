@@ -14,7 +14,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   icon,
   description,
-  highlightedText,
 }) => {
   // Create image filename by replacing spaces with hyphens and making lowercase
   const imageFileName = icon;
