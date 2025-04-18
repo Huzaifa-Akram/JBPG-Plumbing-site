@@ -1,0 +1,167 @@
+/* Reviews.module.css */
+.reviewsSection {
+  padding-inline: 6rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+  background-color: #e9f5fb;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.line {
+  height: 2px;
+  width: 8rem;
+  background: linear-gradient(90deg, #4caf50, #2196f3);
+  display: inline-block;
+}
+
+.checkatradeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  gap: 1.5rem;
+}
+
+.checkatradeLogo {
+  height: auto;
+  max-width: 200px;
+}
+
+.viewAllLink {
+  color: #f44336;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+.reviewsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.reviewRow {
+  display: flex;
+  gap: 2rem;
+}
+
+.reviewCard {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reviewLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1.5rem;
+  min-width: 80px;
+}
+
+.checkatradeIcon {
+  margin-bottom: 0.5rem;
+}
+
+.reviewAuthor {
+  text-align: center;
+}
+
+.authorName {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.authorLocation {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+.reviewContent {
+  flex: 1;
+}
+
+.reviewText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .reviewsSection {
+    padding-inline: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .reviewRow {
+    flex-direction: column;
+  }
+
+  .reviewCard {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviewsSection {
+    padding-inline: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .reviewsSection {
+    padding-inline: 1.5rem;
+  }
+
+  .reviewCard {
+    flex-direction: column;
+  }
+
+  .reviewLeft {
+    flex-direction: row;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .reviewAuthor {
+    text-align: left;
+  }
+}
