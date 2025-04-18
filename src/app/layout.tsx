@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   ),
   title: "JB Plumbing and Heating | Professional Plumbing Services",
   description:
-    "Professional plumbing and heating services in [Your Location]. Expert solutions for residential and commercial properties with 24/7 emergency support.",
+    "Professional plumbing and heating services in London. Expert solutions for residential and commercial properties with 24/7 emergency support.",
   keywords:
     "plumbing, heating, emergency plumbing, boiler repair, bathroom installation, [Your Location]",
   authors: [{ name: "JB Plumbing and Heating" }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "JB Plumbing and Heating",
     images: [
       {
-        url: "/images/site-logo.svg", // Consider using an actual image rather than SVG for social sharing
+        url: "/images/site-logo.png", // Consider using an actual image rather than SVG for social sharing
         width: 1200,
         height: 630,
         alt: "JB Plumbing and Heating",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "JB Plumbing and Heating | Professional Services",
     description:
       "Reliable plumbing and heating solutions for homes and businesses in [Your Location].",
-    images: ["/images/site-logo.svg"], // Consider using an actual image rather than SVG
+    images: ["/images/site-logo.png"], // Consider using an actual image rather than SVG
   },
   robots: {
     index: true,
