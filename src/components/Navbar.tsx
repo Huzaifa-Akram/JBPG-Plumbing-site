@@ -8,20 +8,18 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Function to check if window width is mobile size
-    const checkMobile = () => {
-      // We'll just remove it since it's not being used
+    // When menu is open, prevent body scrolling to avoid layout shifts
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    
+    return () => {
+      // Cleanup - restore scrolling when component unmounts
+      document.body.style.overflow = "";
     };
-
-    // Initial check
-    checkMobile();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", checkMobile);
-
-    // Cleanup event listener
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="flex items-center justify-between p-4 bg-white shadow-sm sm:px-8 lg:px-25"
+      className="flex items-center justify-between p-4 bg-white shadow-sm sm:px-8 lg:px-25 relative z-50"
       aria-label="Main navigation"
     >
       {/* Logo - now responsive */}
@@ -136,14 +134,16 @@ const Navbar = () => {
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleMenu}
+        aria-hidden="true"
       ></div>
 
       {/* Mobile Menu Slide-in Panel */}
       <div
         id="mobile-menu"
-        className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out lg:hidden ${
+        className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        style={{ maxWidth: "100vw" }}
       >
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-end mb-6">
