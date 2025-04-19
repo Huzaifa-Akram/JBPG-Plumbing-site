@@ -65,117 +65,120 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 flex items-center justify-between p-4 bg-white sm:px-8 lg:px-25 z-50 transition-all duration-300 ${
-        isScrolled ? "shadow-md" : "shadow-sm"
-      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
-      aria-label="Main navigation"
-    >
-      {/* Logo - now responsive */}
-      <div className="flex items-center">
-        <Link href="/">
-          <div className="flex items-center">
-            <Image
-              src="/images/site-logo.svg"
-              alt="JB Plumbing and Heating"
-              width={150}
-              height={150}
-              className="w-32 sm:w-40 md:w-48 lg:w-52 h-auto"
-              priority
-            />
-          </div>
-        </Link>
-      </div>
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 flex items-center justify-between p-4 bg-white sm:px-8 lg:px-25 z-[100] transition-all duration-300 ${
+          isScrolled ? "shadow-md" : "shadow-sm"
+        } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        aria-label="Main navigation"
+      >
+        {/* Logo - now responsive with larger size on mobile */}
+        <div className="flex items-center">
+          <Link href="/">
+            <div className="flex items-center">
+              <Image
+                src="/images/site-logo.svg"
+                alt="JB Plumbing and Heating"
+                width={150}
+                height={150}
+                className="w-40 sm:w-40 md:w-48 lg:w-52 h-auto"
+                priority
+              />
+            </div>
+          </Link>
+        </div>
 
-      {/* Desktop Navigation Links - responsive font sizes */}
-      <div className="hidden lg:flex items-center justify-center">
-        <ul className="flex space-x-5 xl:space-x-8">
-          <li>
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("about-us")}
-              className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
-            >
-              About Us
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
-            >
-              Services
-            </button>
-          </li>
-          <li>
-            <Link
-              href="/blog"
-              className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
-            >
-              Blog
-            </Link>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection("contact-section")}
-              className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
-            >
-              Contact
-            </button>
-          </li>
-        </ul>
-      </div>
+        {/* Desktop Navigation Links - responsive font sizes */}
+        <div className="hidden lg:flex items-center justify-center">
+          <ul className="flex space-x-5 xl:space-x-8">
+            <li>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
+              >
+                Home
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => scrollToSection("about-us")}
+                className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
+              >
+                About Us
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
+              >
+                Services
+              </button>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={() => scrollToSection("contact-section")}
+                className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
+        </div>
 
-      {/* Call Us Now button (desktop) - matching sizes with hero */}
-      <div className="hidden lg:block">
-        <Link href="/contact">
-          <AnimatedCallUsNowButton className="px-4 sm:px-6 py-2 text-xs sm:text-sm" />
-        </Link>
-      </div>
+        {/* Call Us Now button (desktop) - matching sizes with hero */}
+        <div className="hidden lg:block">
+          <Link href="/contact">
+            <AnimatedCallUsNowButton className="px-4 sm:px-6 py-2 text-xs sm:text-sm" />
+          </Link>
+        </div>
 
-      {/* Mobile actions container */}
-      <div className="flex items-center lg:hidden">
-        {/* Call Us Now button (mobile) - placed to the left of hamburger button */}
-        <Link href="/contact" className="mr-3">
-          <AnimatedCallUsNowButton className="px-4 py-1.5 text-xs" />
-        </Link>
+        {/* Mobile actions container */}
+        <div className="flex items-center lg:hidden">
+          {/* Call Us Now button (mobile) - placed to the left of hamburger button */}
+          <Link href="/contact" className="mr-3">
+            <AnimatedCallUsNowButton className="px-4 py-1.5 text-xs" />
+          </Link>
 
-        {/* Burger menu button for mobile */}
-        <button
-          onClick={toggleMenu}
-          className="flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          <span
-            className={`block h-0.5 w-8 bg-gray-600 transform transition duration-300 ease-in-out ${
-              isMenuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
-          ></span>
-          <span
-            className={`block h-0.5 w-8 bg-gray-600 transition duration-300 ease-in-out ${
-              isMenuOpen ? "opacity-0" : "opacity-100"
-            }`}
-          ></span>
-          <span
-            className={`block h-0.5 w-8 bg-gray-600 transform transition duration-300 ease-in-out ${
-              isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          ></span>
-        </button>
-      </div>
+          {/* Burger menu button for mobile */}
+          <button
+            onClick={toggleMenu}
+            className="flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            <span
+              className={`block h-0.5 w-8 bg-gray-600 transform transition duration-300 ease-in-out ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block h-0.5 w-8 bg-gray-600 transition duration-300 ease-in-out ${
+                isMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
+            ></span>
+            <span
+              className={`block h-0.5 w-8 bg-gray-600 transform transition duration-300 ease-in-out ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
+          </button>
+        </div>
+      </nav>
 
+      {/* Mobile Menu Components moved outside of nav to ensure proper stacking */}
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-black bg-opacity-50 z-[999] lg:hidden transition-opacity duration-300 ease-in-out ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleMenu}
@@ -185,7 +188,7 @@ const Navbar = () => {
       {/* Mobile Menu Slide-in Panel */}
       <div
         id="mobile-menu"
-        className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto ${
+        className={`fixed top-0 right-0 w-64 h-full bg-white z-[1000] shadow-xl transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
         style={{ maxWidth: "100vw" }}
@@ -264,7 +267,7 @@ const Navbar = () => {
           </nav>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
