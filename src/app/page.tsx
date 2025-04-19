@@ -6,6 +6,7 @@ import EmergencyCallSection from "@/components/EmergencyCallSection";
 import FAQs from "@/components/FAQs";
 import { faqsData } from "@/data/faqsdata";
 import type { Metadata } from "next";
+import ContactPage from "@/components/ContactPage";
 
 export const metadata: Metadata = {
   title:
@@ -26,6 +27,7 @@ export default function Home() {
       <Reviews />
       <EmergencyCallSection />
       <FAQs faqs={faqsData} />
+      <ContactPage />
     </main>
   );
 }
