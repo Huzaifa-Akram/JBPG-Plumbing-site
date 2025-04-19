@@ -128,8 +128,8 @@ const Contact: React.FC<ContactProps> = ({
                 </svg>
                 <h3>Thank You!</h3>
                 <p>
-                  Your message has been sent successfully. We'll get back to you
-                  soon!
+                  Your message has been sent successfully. We&apos;ll get back
+                  to you soon!
                 </p>
                 <button onClick={closePopup} className={styles.popupButton}>
                   Close
