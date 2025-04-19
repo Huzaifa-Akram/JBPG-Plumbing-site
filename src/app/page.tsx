@@ -2,8 +2,10 @@ import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
 import Reviews from "@/components/Reviews";
-import type { Metadata } from "next";
 import EmergencyCallSection from "@/components/EmergencyCallSection";
+import FAQs from "@/components/FAQs";
+import { faqsData } from "@/data/faqsdata";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
@@ -23,6 +25,7 @@ export default function Home() {
       <Services />
       <Reviews />
       <EmergencyCallSection />
+      <FAQs faqs={faqsData} />
     </main>
   );
 }
