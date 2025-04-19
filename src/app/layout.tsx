@@ -114,7 +114,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-[80px] md:pt-[90px] lg:pt-[100px]">{children}</main>
       </body>
     </html>
   );

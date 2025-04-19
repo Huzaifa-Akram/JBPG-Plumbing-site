@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     // When menu is open, prevent body scrolling to avoid layout shifts
@@ -15,9 +16,21 @@ const Navbar = () => {
       document.body.style.overflow = "";
     }
     
+    // Add scroll event listener to track when page is scrolled
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
     return () => {
       // Cleanup - restore scrolling when component unmounts
       document.body.style.overflow = "";
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [isMenuOpen]);
 
@@ -27,7 +40,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className="flex items-center justify-between p-4 bg-white shadow-sm sm:px-8 lg:px-25 relative z-50"
+      className={`fixed top-0 left-0 right-0 flex items-center justify-between p-4 bg-white sm:px-8 lg:px-25 z-50 transition-all duration-300 ${
+        isScrolled ? 'shadow-md' : 'shadow-sm'
+      }`}
       aria-label="Main navigation"
     >
       {/* Logo - now responsive */}
