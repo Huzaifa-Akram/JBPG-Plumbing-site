@@ -15,7 +15,8 @@ body {
   width: 100%;
 }
 
-#__next, main {
+#__next,
+main {
   overflow-x: hidden; /* Additional overflow protection */
 }
 

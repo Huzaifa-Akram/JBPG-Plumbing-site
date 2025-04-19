@@ -3,7 +3,7 @@ import Contact from "../components/Contact";
 
 const ContactPage = () => {
   return (
-    <div>
+    <div id="contact-section">
       <Contact
         phoneNumber="+49 011223344"
         email="jbphs@gmail.com"

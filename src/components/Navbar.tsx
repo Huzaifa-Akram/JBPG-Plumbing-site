@@ -3,10 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import AnimatedCallUsNowButton from "./animations/AnimatedCallUsNowButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
 
   useEffect(() => {
     // When menu is open, prevent body scrolling to avoid layout shifts
@@ -15,34 +18,57 @@ const Navbar = () => {
     } else {
       document.body.style.overflow = "";
     }
-    
+
     // Add scroll event listener to track when page is scrolled
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      const currentScrollPos = window.scrollY;
+
+      // Set scrolled state for shadow effect
+      setIsScrolled(currentScrollPos > 10);
+
+      // Determine if navbar should be visible based on scroll direction
+      // Add some threshold to prevent the navbar from showing/hiding on small movements
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+      const scrollDifference = Math.abs(prevScrollPos - currentScrollPos);
+
+      if (scrollDifference > 10) {
+        setIsVisible(isScrollingUp || currentScrollPos < 10);
+        setPrevScrollPos(currentScrollPos);
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    
+
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       // Cleanup - restore scrolling when component unmounts
       document.body.style.overflow = "";
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, prevScrollPos]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      // Close mobile menu if open
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+
+      // Scroll to section with smooth behavior
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 flex items-center justify-between p-4 bg-white sm:px-8 lg:px-25 z-50 transition-all duration-300 ${
-        isScrolled ? 'shadow-md' : 'shadow-sm'
-      }`}
+        isScrolled ? "shadow-md" : "shadow-sm"
+      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       aria-label="Main navigation"
     >
       {/* Logo - now responsive */}
@@ -65,28 +91,28 @@ const Navbar = () => {
       <div className="hidden lg:flex items-center justify-center">
         <ul className="flex space-x-5 xl:space-x-8">
           <li>
-            <Link
-              href="/"
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
             >
               Home
-            </Link>
+            </button>
           </li>
           <li>
-            <Link
-              href="/about"
+            <button
+              onClick={() => scrollToSection("about-us")}
               className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
             >
               About Us
-            </Link>
+            </button>
           </li>
           <li>
-            <Link
-              href="/services"
+            <button
+              onClick={() => scrollToSection("services")}
               className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
             >
               Services
-            </Link>
+            </button>
           </li>
           <li>
             <Link
@@ -97,12 +123,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link
-              href="/contact"
+            <button
+              onClick={() => scrollToSection("contact-section")}
               className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
             >
               Contact
-            </Link>
+            </button>
           </li>
         </ul>
       </div>
@@ -110,14 +136,18 @@ const Navbar = () => {
       {/* Call Us Now button (desktop) - matching sizes with hero */}
       <div className="hidden lg:block">
         <Link href="/contact">
-          <button className="bg-[#62c46f] text-white px-4 sm:px-6 py-2 rounded-full hover:bg-[#] transition-colors text-xs sm:text-sm">
-            Call Us Now
-          </button>
+          <AnimatedCallUsNowButton className="px-4 sm:px-6 py-2 text-xs sm:text-sm" />
         </Link>
       </div>
 
-      {/* Burger menu button for mobile */}
-      <div className="lg:hidden">
+      {/* Mobile actions container */}
+      <div className="flex items-center lg:hidden">
+        {/* Call Us Now button (mobile) - placed to the left of hamburger button */}
+        <Link href="/contact" className="mr-3">
+          <AnimatedCallUsNowButton className="px-4 py-1.5 text-xs" />
+        </Link>
+
+        {/* Burger menu button for mobile */}
         <button
           onClick={toggleMenu}
           className="flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
@@ -187,31 +217,31 @@ const Navbar = () => {
           <nav aria-label="Mobile navigation">
             <ul className="flex flex-col space-y-6">
               <li>
-                <Link
-                  href="/"
+                <button
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    toggleMenu();
+                  }}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
-                  onClick={toggleMenu}
                 >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="/about"
+                <button
+                  onClick={() => scrollToSection("about-us")}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
-                  onClick={toggleMenu}
                 >
                   About Us
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  href="/services"
+                <button
+                  onClick={() => scrollToSection("services")}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
-                  onClick={toggleMenu}
                 >
                   Services
-                </Link>
+                </button>
               </li>
               <li>
                 <Link
@@ -223,24 +253,15 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => scrollToSection("contact-section")}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
-                  onClick={toggleMenu}
                 >
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
           </nav>
-
-          <div className="mt-auto">
-            <Link href="/contact" onClick={toggleMenu}>
-              <button className="w-full bg-[#38bdf8] text-white py-2 rounded-full hover:bg-[#0ea5e9] transition-colors text-xs sm:text-sm">
-                Call Us Now
-              </button>
-            </Link>
-          </div>
         </div>
       </div>
     </nav>
