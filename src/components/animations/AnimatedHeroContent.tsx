@@ -5,21 +5,14 @@ import styles from "../Hero.module.css";
 import Image from "next/image";
 
 interface AnimatedHeroContentProps {
-  title: string;
   description: string;
   companyName: string;
 }
 
 const AnimatedHeroContent = ({
-  title,
   description,
   companyName,
 }: AnimatedHeroContentProps) => {
-  // Extract title parts for animation
-  const titleParts = title.split("&");
-  const firstPart = titleParts[0] + "&";
-  const secondPart = titleParts[1] || "";
-
   return (
     <div className={styles.heroContent}>
       <motion.div

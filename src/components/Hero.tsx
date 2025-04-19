@@ -7,7 +7,6 @@ const Hero = () => {
     <section className={styles.heroSection}>
       <div className={styles.heroContainer}>
         <AnimatedHeroContent
-          title="Professional Plumbing Services For Your Home & Business"
           description="We provide high-quality plumbing and heating solutions with 24/7 emergency service. Our licensed professionals are ready to solve all your plumbing problems quickly and efficiently."
           companyName="JB Plumbing & Heating"
         />

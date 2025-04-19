@@ -38,7 +38,7 @@ const FAQs: React.FC<FAQsProps> = ({
       <div className={styles.faqContainer}>
         <div className={styles.faqContentWrapper}>
           <h2 id="faq-heading" className={styles.faqTitle}>
-            Frequently Asked Questions
+            {title}
           </h2>
 
           <div className={styles.faqLayout}>
