@@ -3,6 +3,7 @@ import AboutUs from "@/components/AboutUs";
 import Services from "@/components/Services";
 import Reviews from "@/components/Reviews";
 import type { Metadata } from "next";
+import EmergencyCallSection from "@/components/EmergencyCallSection";
 
 export const metadata: Metadata = {
   title:
@@ -21,6 +22,7 @@ export default function Home() {
       <AboutUs />
       <Services />
       <Reviews />
+      <EmergencyCallSection />
     </main>
   );
 }

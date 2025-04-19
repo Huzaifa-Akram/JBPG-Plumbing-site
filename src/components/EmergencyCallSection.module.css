@@ -1,0 +1,120 @@
+/* EmergencyCallSection.module.css */
+.emergencyCallSection {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  padding: 4rem 0;
+}
+
+.emergencyCallSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/water-background.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.emergencyCallContainer {
+  position: relative;
+  z-index: 2;
+  padding-inline: 6rem;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.emergencyCallContent {
+  color: white;
+  padding: 2rem 0;
+}
+
+.emergencyTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.emergencyDescription {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.emergencyButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ff3a3a;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 58, 58, 0.3);
+}
+
+.emergencyButton:hover {
+  background-color: #e02f2f;
+}
+
+.emergencyButton:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.emergencyButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .emergencyCallContainer {
+    padding-inline: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .emergencyTitle {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .emergencyCallContainer {
+    padding-inline: 2rem;
+  }
+
+  .emergencyTitle {
+    font-size: 2rem;
+  }
+
+  .emergencyDescription {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .emergencyCallContainer {
+    padding-inline: 1.5rem;
+  }
+
+  .emergencyTitle {
+    font-size: 1.8rem;
+  }
+
+  .emergencyCallSection {
+    padding: 3rem 0;
+  }
+}
