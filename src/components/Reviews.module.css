@@ -69,11 +69,16 @@
 
 .reviewCard {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 50px 0px;
   padding: 1.5rem;
   display: flex;
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reviewCard:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
 .reviewLeft {

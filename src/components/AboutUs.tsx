@@ -1,14 +1,23 @@
+"use client";
+
 // AboutUs.jsx
 import React from "react";
 import Image from "next/image";
 import styles from "./AboutUs.module.css";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
     <section className={styles.aboutUsSection} id="about-us">
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
-          <div className={styles.imageGallery}>
+          <motion.div
+            className={styles.imageGallery}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          >
             <div className={styles.mainImageWrapper}>
               <Image
                 src="/images/about-us.png"
@@ -18,12 +27,32 @@ const AboutUs = () => {
                 className={styles.mainImage}
               />
             </div>
-          </div>
+          </motion.div>
 
-          <div className={styles.textContent}>
-            <h2 className={styles.sectionTitle}>About Us</h2>
+          <motion.div
+            className={styles.textContent}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.h2
+              className={styles.sectionTitle}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+            >
+              About Us
+            </motion.h2>
 
-            <p className={styles.mainParagraph}>
+            <motion.p
+              className={styles.mainParagraph}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               When summer&apos;s heat rolls in, your home still deserves comfort
               without the drama. At JB Plumbing & Heating Specialists,
               we&apos;ve been London&apos;s trusted heating and plumbing experts
@@ -32,16 +61,28 @@ const AboutUs = () => {
               boiler check-up before winter, a sudden leak in July, or upgrading
               to a smarter system, we make it simple with no jargon and no
               surprises.
-            </p>
+            </motion.p>
 
-            <p className={styles.secondaryParagraph}>
+            <motion.p
+              className={styles.secondaryParagraph}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
               Your comfort shouldn&apos;t depend on luck. That&apos;s why we
               warranty every repair and only recommend services we&apos;d trust
               in our own homes, because reliable plumbing and heating should be
               effortless, year-round.
-            </p>
+            </motion.p>
 
-            <div className={styles.servicesContainer}>
+            <motion.div
+              className={styles.servicesContainer}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               <div className={styles.serviceColumn}>
                 <h3 className={styles.serviceTitle}>Emergency 24/7 Service</h3>
                 <ul className={styles.serviceList}>
@@ -71,9 +112,15 @@ const AboutUs = () => {
                   <h4>Fixed Quote & Services</h4>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className={styles.ctaWrapper}>
+            <motion.div
+              className={styles.ctaWrapper}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
               <a
                 href="/services"
                 className={styles.ctaButton}
@@ -82,8 +129,8 @@ const AboutUs = () => {
                 Read More
                 <span className={styles.arrowIcon}>→</span>
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

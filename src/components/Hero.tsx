@@ -1,31 +1,59 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Hero.module.css";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroContainer}>
-        <div className={styles.heroContent}>
-          <div className={styles.companyName}>
+        <motion.div
+          className={styles.heroContent}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.div
+            className={styles.companyName}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <span>
               <span style={{ color: "#29aae3" }}>—</span> JB Plumbing & Heating{" "}
               <span style={{ color: "#29aae3" }}>—</span>
             </span>
-          </div>
-          <h1 className={styles.heroTitle}>
+          </motion.div>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
             <span className={styles.professional}>Professional</span> Plumbing
             <br />
             Services <span className={styles.accent}>For Your Home &</span>
             <br />
             <span className={styles.accent}>Business</span>
-          </h1>
-          <p className={styles.heroDescription}>
+          </motion.h1>
+          <motion.p
+            className={styles.heroDescription}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+          >
             We provide high-quality plumbing and heating solutions with 24/7
             emergency service. Our licensed professionals are ready to solve all
             your plumbing problems quickly and efficiently.
-          </p>
-          <div className={styles.heroCTA}>
+          </motion.p>
+          <motion.div
+            className={styles.heroCTA}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+          >
             <div className={styles.serviceFeatures}>
               <div className={styles.featureItem}>
                 <span className={styles.featureIcon}>
@@ -62,13 +90,23 @@ const Hero = () => {
               </div>
             </div>
             <div className={styles.buttonContainer}>
-              <Link href="/contact" className={styles.contactButton}>
-                Contact Us
-              </Link>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <Link href="/contact" className={styles.contactButton}>
+                  Contact Us
+                </Link>
+              </motion.div>
             </div>
-          </div>
-        </div>
-        <div className={styles.heroImage}>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          className={styles.heroImage}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <Image
             src="/images/plumber-img.svg"
             alt="Professional Plumber from JB Plumbing & Heating"
@@ -76,7 +114,7 @@ const Hero = () => {
             height={400}
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
