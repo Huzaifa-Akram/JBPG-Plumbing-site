@@ -6,7 +6,6 @@ import EmergencyCallSection from "@/components/EmergencyCallSection";
 import FAQs from "@/components/FAQs";
 import { faqsData } from "@/data/faqsdata";
 import type { Metadata } from "next";
-import ContactPage from "@/components/ContactPage";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
@@ -33,7 +32,6 @@ export default function Home() {
         phoneNumber="+441234567890"
       />
       <FAQs faqs={faqsData} />
-      <ContactPage />
       <WhatsAppButton phoneNumber="447000000000" />
     </main>
   );

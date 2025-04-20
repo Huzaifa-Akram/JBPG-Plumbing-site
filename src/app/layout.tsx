@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import Script from "next/script";
 import { Nunito } from "next/font/google";
 
@@ -149,6 +150,7 @@ export default function RootLayout({
       <body suppressHydrationWarning className="text-base antialiased">
         <Navbar />
         <main className="pt-[80px] md:pt-[90px] lg:pt-[100px]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

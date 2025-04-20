@@ -1,14 +1,17 @@
 /* ServiceCard.module.css */
 .serviceCard {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  padding: 1.75rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #edf6fc;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
   animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
+  height: 100%;
 }
 
 .serviceCard:nth-child(1) {
@@ -38,12 +41,12 @@
 
 .serviceCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .iconContainer {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,25 +56,28 @@
 .serviceIcon {
   width: 100%;
   height: auto;
+  color: #2196f3; /* Blue color for the icon */
 }
 
 .serviceTitle {
-  color: #333;
+  color: #000;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .serviceDescription {
-  color: #666;
-  font-size: 0.9rem;
+  color: #444;
+  font-size: 0.95rem;
   line-height: 1.5;
-  flex-grow: 1;
+  text-align: center;
+  margin: 0;
 }
 
 .highlight {
-  color: #29aae3;
-  font-weight: 600;
+  color: #4caf50; /* Green highlight color as shown in the image */
+  font-weight: 500;
 }
 
 @keyframes fadeInUp {
@@ -88,15 +94,5 @@
 @media (max-width: 768px) {
   .serviceCard {
     padding: 1.5rem 1rem;
-  }
-
-  .iconContainer {
-    width: 70px;
-    height: 70px;
-  }
-
-  .serviceIcon {
-    width: 40px;
-    height: 40px;
   }
 }

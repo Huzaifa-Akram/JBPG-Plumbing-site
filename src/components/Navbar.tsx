@@ -4,30 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import CallUsNowButton from "./CallUsNowButton";
+import { usePathname } from "next/navigation";
+import { BlogLink } from "./NavbarClientWrapper";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
-    // When menu is open, prevent body scrolling to avoid layout shifts
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
 
-    // Add scroll event listener to track when page is scrolled
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
-      // Set scrolled state for shadow effect
       setIsScrolled(currentScrollPos > 10);
 
-      // Determine if navbar should be visible based on scroll direction
-      // Add some threshold to prevent the navbar from showing/hiding on small movements
       const isScrollingUp = prevScrollPos > currentScrollPos;
       const scrollDifference = Math.abs(prevScrollPos - currentScrollPos);
 
@@ -40,7 +39,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Cleanup - restore scrolling when component unmounts
       document.body.style.overflow = "";
       window.removeEventListener("scroll", handleScroll);
     };
@@ -50,16 +48,33 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Function to handle smooth scrolling to sections
+  const handleNavigation = (sectionId: string) => {
+    if (isHomePage) {
+      scrollToSection(sectionId);
+    } else {
+      window.location.href = `/#${sectionId}`;
+    }
+  };
+
+  const handleHomeNavigation = () => {
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      window.location.href = "/";
+    }
+
+    if (isMenuOpen) {
+      toggleMenu();
+    }
+  };
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      // Close mobile menu if open
       if (isMenuOpen) {
         toggleMenu();
       }
 
-      // Scroll to section with smooth behavior
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -72,7 +87,6 @@ const Navbar = () => {
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         aria-label="Main navigation"
       >
-        {/* Logo - now responsive with larger size on mobile */}
         <div className="flex items-center">
           <Link href="/">
             <div className="flex items-center">
@@ -88,12 +102,11 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation Links - responsive font sizes */}
         <div className="hidden lg:flex items-center justify-center">
           <ul className="flex space-x-5 xl:space-x-8">
             <li>
               <button
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                onClick={handleHomeNavigation}
                 className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
               >
                 Home
@@ -101,7 +114,7 @@ const Navbar = () => {
             </li>
             <li>
               <button
-                onClick={() => scrollToSection("about-us")}
+                onClick={() => handleNavigation("about-us")}
                 className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
               >
                 About Us
@@ -109,46 +122,45 @@ const Navbar = () => {
             </li>
             <li>
               <button
-                onClick={() => scrollToSection("services")}
+                onClick={() => handleNavigation("services")}
                 className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
               >
                 Services
               </button>
             </li>
             <li>
-              <Link
-                href="/blog"
-                className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
-              >
-                Blog
-              </Link>
+              <BlogLink className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors" />
             </li>
             <li>
-              <button
-                onClick={() => scrollToSection("contact-section")}
+              <Link
+                href="/contact-us"
                 className="text-sm xl:text-base text-gray-600 hover:text-[#38bdf8] transition-colors"
               >
                 Contact
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* Call Us Now button (desktop) - matching sizes with hero */}
         <div className="hidden lg:block">
-          <Link href="/contact">
+          <Link href="/contact-us">
             <CallUsNowButton className="px-4 sm:px-6 py-2 text-xs sm:text-sm" />
           </Link>
         </div>
 
-        {/* Mobile actions container */}
         <div className="flex items-center lg:hidden">
-          {/* Call Us Now button (mobile) - placed to the left of hamburger button */}
-          <Link href="/contact" className="mr-3">
+          <Link
+            href="/contact-us"
+            className="mr-3"
+            onClick={() => {
+              if (isMenuOpen) {
+                toggleMenu();
+              }
+            }}
+          >
             <CallUsNowButton className="px-4 py-1.5 text-xs" />
           </Link>
 
-          {/* Burger menu button for mobile */}
           <button
             onClick={toggleMenu}
             className="flex flex-col justify-center items-center w-10 h-10 space-y-1.5 focus:outline-none"
@@ -175,8 +187,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Components moved outside of nav to ensure proper stacking */}
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-[999] lg:hidden transition-opacity duration-300 ease-in-out ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
@@ -185,7 +195,6 @@ const Navbar = () => {
         aria-hidden="true"
       ></div>
 
-      {/* Mobile Menu Slide-in Panel */}
       <div
         id="mobile-menu"
         className={`fixed top-0 right-0 w-64 h-full bg-white z-[1000] shadow-xl transform transition-transform duration-300 ease-in-out lg:hidden overflow-y-auto ${
@@ -221,10 +230,7 @@ const Navbar = () => {
             <ul className="flex flex-col space-y-6">
               <li>
                 <button
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                    toggleMenu();
-                  }}
+                  onClick={handleHomeNavigation}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
                 >
                   Home
@@ -232,7 +238,7 @@ const Navbar = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("about-us")}
+                  onClick={() => handleNavigation("about-us")}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
                 >
                   About Us
@@ -240,28 +246,26 @@ const Navbar = () => {
               </li>
               <li>
                 <button
-                  onClick={() => scrollToSection("services")}
+                  onClick={() => handleNavigation("services")}
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
                 >
                   Services
                 </button>
               </li>
               <li>
+                <BlogLink
+                  className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
+                  onClick={toggleMenu}
+                />
+              </li>
+              <li>
                 <Link
-                  href="/blog"
+                  href="/contact-us"
                   className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
                   onClick={toggleMenu}
                 >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("contact-section")}
-                  className="text-base sm:text-lg text-gray-600 hover:text-[#38bdf8]"
-                >
                   Contact
-                </button>
+                </Link>
               </li>
             </ul>
           </nav>

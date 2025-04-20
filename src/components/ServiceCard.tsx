@@ -25,8 +25,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <Image
           src={`/images/${imageFileName}.svg`}
           alt={`${title} icon`}
-          width={48}
-          height={48}
+          width={64}
+          height={64}
           className={styles.serviceIcon}
           loading="lazy"
         />

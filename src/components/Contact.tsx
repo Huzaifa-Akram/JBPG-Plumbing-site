@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 
 interface ContactProps {
@@ -17,6 +17,10 @@ const Contact: React.FC<ContactProps> = ({
   termsUrl = "/terms-conditions",
   privacyUrl = "/privacy-policy",
 }) => {
+  // Add client-side only state to prevent hydration mismatch
+  const [isClient, setIsClient] = useState(false);
+
+  // All other state remains the same
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -33,6 +37,11 @@ const Contact: React.FC<ContactProps> = ({
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Use useEffect to mark when component is mounted on client
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -101,6 +110,17 @@ const Contact: React.FC<ContactProps> = ({
     setFormStatus("idle");
     setErrorMessage("");
   };
+
+  // Only render complete UI after client-side hydration is complete
+  if (!isClient) {
+    return (
+      <div className={styles.contactSection}>
+        <div className={styles.contactContainer}>
+          <h2 className={styles.contactTitle}>Contact Us</h2>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className={styles.contactSection}>
