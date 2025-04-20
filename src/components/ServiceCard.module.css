@@ -1,52 +1,88 @@
 /* ServiceCard.module.css */
 .serviceCard {
-  background-color: #29aae31a;
+  background-color: #fff;
   border-radius: 8px;
-  padding: 2rem 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 1.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.serviceCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.serviceCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.serviceCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.serviceCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.serviceCard:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.serviceCard:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.serviceCard:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.serviceCard:nth-child(8) {
+  animation-delay: 0.8s;
 }
 
 .serviceCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .iconContainer {
-  width: 80px;
-  height: 80px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .serviceIcon {
-  width: 48px;
-  height: 48px;
-  color: #2196f3;
+  width: 100%;
+  height: auto;
 }
 
 .serviceTitle {
+  color: #333;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #333;
   margin-bottom: 1rem;
 }
 
 .serviceDescription {
-  font-size: 0.95rem;
-  line-height: 1.6;
   color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1;
 }
 
 .highlight {
-  color: #4caf50;
-  font-weight: 500;
+  color: #29aae3;
+  font-weight: 600;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {

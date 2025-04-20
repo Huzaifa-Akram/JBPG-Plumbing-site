@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import styles from "./WhatsAppButton.module.css";
+import { useEffect, useState } from "react";
 
 interface WhatsAppButtonProps {
   phoneNumber: string;
@@ -11,46 +12,43 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
   phoneNumber,
   message = "Hello, I need plumbing services",
 }) => {
+  // Implement lazy loading for the WhatsApp button
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Show WhatsApp button only after page has loaded
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Don't render anything until visible
+  if (!isVisible) return null;
+
   // Construct WhatsApp URL
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
   )}`;
 
   return (
-    <motion.div
-      className="fixed bottom-6 right-6 z-50"
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ type: "spring", duration: 0.5 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-    >
+    <div className={`${styles.whatsappButton} ${styles.whatsappButtonAppear}`}>
       <Link
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"
-        className="block relative"
+        className={styles.iconContainer}
       >
         {/* Pulsing effect */}
-        <motion.div
-          className="absolute inset-0 rounded-full bg-green-500 opacity-30"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.1, 0.3],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "loop",
-          }}
-        />
+        <div className={styles.pulseEffect}></div>
 
         {/* WhatsApp Icon */}
-        <div className="relative w-14 h-14 flex items-center justify-center bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors">
+        <div className={styles.iconWrapper}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-white"
+            className={styles.whatsappIcon}
             viewBox="0 0 24 24"
             fill="currentColor"
           >
@@ -58,7 +56,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({
           </svg>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 };
 

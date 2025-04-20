@@ -26,7 +26,12 @@ export default function Home() {
       <AboutUs />
       <Services />
       <Reviews />
-      <EmergencyCallSection />
+      <EmergencyCallSection
+        title="24/7 Emergency Call"
+        description="Have a burst pipe or broken boiler? There is no need to panic, we are here to fix the problem."
+        buttonText="Call Us Now"
+        phoneNumber="+441234567890"
+      />
       <FAQs faqs={faqsData} />
       <ContactPage />
       <WhatsAppButton phoneNumber="447000000000" />

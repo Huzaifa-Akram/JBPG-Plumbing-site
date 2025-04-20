@@ -1,17 +1,49 @@
 import React from "react";
 import styles from "./EmergencyCallSection.module.css";
-import AnimatedEmergencyContent from "./animations/AnimatedEmergencyContent";
 
-const EmergencyCallSection = () => {
+interface EmergencyCallSectionProps {
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  phoneNumber?: string;
+}
+
+const EmergencyCallSection: React.FC<EmergencyCallSectionProps> = ({
+  title = "24/7 Emergency Call",
+  description = "Have a burst pipe or broken boiler. There is no need to panic, we are here to fix the problem.",
+  buttonText = "Call Us Now",
+  phoneNumber = "+1234567890",
+}) => {
   return (
     <section className={styles.emergencyCallSection}>
       <div className={styles.emergencyCallContainer}>
-        <AnimatedEmergencyContent
-          title="24/7 Emergency Call"
-          description="Have a burst pipe or broken boiler. There is no need to panic, we are here to fix the problem."
-          buttonText="Call Us Now"
-          phoneNumber="+1234567890"
-        />
+        <div className={styles.emergencyCallContent}>
+          <h2 className={styles.emergencyTitle}>{title}</h2>
+          <p className={styles.emergencyDescription}>{description}</p>
+          <div className={styles.emergencyButtonWrapper}>
+            <a
+              href={`tel:${phoneNumber.replace(/\s+/g, "")}`}
+              className={styles.emergencyButton}
+              aria-label="Call for emergency service"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={styles.pulseIcon}
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              {buttonText}
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

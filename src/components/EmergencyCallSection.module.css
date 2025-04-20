@@ -41,6 +41,8 @@
   font-weight: 700;
   margin-bottom: 1rem;
   color: white;
+  position: relative;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .emergencyDescription {
@@ -48,6 +50,7 @@
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 600px;
+  animation: fadeInUp 1s ease forwards;
 }
 
 .emergencyButton {
@@ -60,12 +63,15 @@
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(255, 58, 58, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .emergencyButton:hover {
   background-color: #e02f2f;
+  transform: translateY(-2px);
 }
 
 .emergencyButton:focus {
@@ -76,6 +82,37 @@
 .emergencyButton svg {
   width: 18px;
   height: 18px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.emergencyButtonWrapper {
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.pulseIcon {
+  animation: pulse 1.5s infinite;
 }
 
 /* Responsive styles */

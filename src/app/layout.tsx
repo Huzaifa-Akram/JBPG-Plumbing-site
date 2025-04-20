@@ -2,6 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
+import { Nunito } from "next/font/google";
+
+// Optimize font loading
+const nunito = Nunito({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-nunito",
+  preload: true,
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -50,8 +60,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={nunito.variable}>
       <head>
+        {/* Preload critical assets */}
+        <link
+          rel="preload"
+          href="/images/site-logo.svg"
+          as="image"
+          type="image/svg+xml"
+        />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+        {/* Schema.org structured data */}
         <Script
           id="schema-org-script"
           type="application/ld+json"
@@ -111,8 +131,22 @@ export default function RootLayout({
             }),
           }}
         />
+
+        {/* Add Google Analytics after page load to not block rendering */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
       </head>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className="text-base antialiased">
         <Navbar />
         <main className="pt-[80px] md:pt-[90px] lg:pt-[100px]">{children}</main>
       </body>

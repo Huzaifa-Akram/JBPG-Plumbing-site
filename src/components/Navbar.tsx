@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import AnimatedCallUsNowButton from "./animations/AnimatedCallUsNowButton";
+import CallUsNowButton from "./CallUsNowButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -137,7 +137,7 @@ const Navbar = () => {
         {/* Call Us Now button (desktop) - matching sizes with hero */}
         <div className="hidden lg:block">
           <Link href="/contact">
-            <AnimatedCallUsNowButton className="px-4 sm:px-6 py-2 text-xs sm:text-sm" />
+            <CallUsNowButton className="px-4 sm:px-6 py-2 text-xs sm:text-sm" />
           </Link>
         </div>
 
@@ -145,7 +145,7 @@ const Navbar = () => {
         <div className="flex items-center lg:hidden">
           {/* Call Us Now button (mobile) - placed to the left of hamburger button */}
           <Link href="/contact" className="mr-3">
-            <AnimatedCallUsNowButton className="px-4 py-1.5 text-xs" />
+            <CallUsNowButton className="px-4 py-1.5 text-xs" />
           </Link>
 
           {/* Burger menu button for mobile */}

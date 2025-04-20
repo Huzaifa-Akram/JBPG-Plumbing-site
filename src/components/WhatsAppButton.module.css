@@ -1,0 +1,78 @@
+.whatsappButton {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+}
+
+.iconContainer {
+  display: block;
+  position: relative;
+}
+
+.pulseEffect {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: #25d366;
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+.iconWrapper {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25d366;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.iconWrapper:hover {
+  background-color: #128c7e;
+  transform: scale(1.1);
+}
+
+.iconWrapper:active {
+  transform: scale(0.9);
+}
+
+.whatsappIcon {
+  height: 2rem;
+  width: 2rem;
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+.whatsappButtonAppear {
+  animation: appear 0.5s ease-out forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
