@@ -66,7 +66,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className={styles.ctaWrapper}>
+            {/* <div className={styles.ctaWrapper}>
               <a
                 href="/services"
                 className={styles.ctaButton}
@@ -75,7 +75,7 @@ const AboutUs = () => {
                 Read More
                 <span className={styles.arrowIcon}>→</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

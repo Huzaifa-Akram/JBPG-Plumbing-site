@@ -18,26 +18,27 @@
   transform: scale(0.95);
 }
 
+/* Minimizing glowEffect animation */
 .glowEffect {
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  padding: 8px;
-  filter: blur(4px);
-  transform: scale(1.1);
-  opacity: 0.8;
-  background: rgba(98, 196, 111, 0.5);
-  animation: pulse 2s infinite alternate;
+  padding: 2px; /* Minimal padding */
+  filter: blur(1px); /* Minimal blur */
+  transform: scale(1.01); /* Almost no scale */
+  opacity: 0.15; /* Very low opacity */
+  background: rgba(98, 196, 111, 0.1); /* Very transparent background */
+  animation: pulse 5s infinite alternate; /* Even slower */
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 15px 2px rgba(98, 196, 111, 0.4);
+    box-shadow: 0 0 3px 0px rgba(98, 196, 111, 0.1); /* Minimal glow */
     transform: scale(1);
   }
   100% {
-    box-shadow: 0 0 20px 8px rgba(98, 196, 111, 0.6);
-    transform: scale(1.05);
+    box-shadow: 0 0 5px 1px rgba(98, 196, 111, 0.15); /* Minimal glow increase */
+    transform: scale(1.005); /* Barely noticeable scale */
   }
 }
 
@@ -50,19 +51,20 @@
   }
 }
 
+/* Minimizing rotatingGlow animation */
 .rotatingGlow {
   position: absolute;
   inset: 0;
   border-radius: 9999px;
   background: conic-gradient(
     from 0deg,
-    rgba(98, 196, 111, 0.8) 0deg,
-    rgba(98, 196, 111, 0) 60deg,
+    rgba(98, 196, 111, 0.15) 0deg,
+    /* Very low opacity */ rgba(98, 196, 111, 0) 60deg,
     rgba(98, 196, 111, 0) 300deg,
-    rgba(98, 196, 111, 0.8) 360deg
+    rgba(98, 196, 111, 0.15) 360deg /* Very low opacity */
   );
-  filter: blur(4px);
-  transform: scale(1.1);
-  opacity: 0.7;
-  animation: rotate 3s linear infinite;
+  filter: blur(1px); /* Minimal blur */
+  transform: scale(1.01); /* Almost no scale */
+  opacity: 0.15; /* Very low opacity */
+  animation: rotate 6s linear infinite; /* Very slow rotation */
 }

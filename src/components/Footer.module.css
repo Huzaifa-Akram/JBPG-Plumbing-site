@@ -81,6 +81,16 @@
   text-decoration: none;
 }
 
+/* Service items - non-clickable but still hoverable */
+.serviceItem {
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.serviceItem:hover {
+  color: #29aae3;
+}
+
 .contactInfo li {
   margin-bottom: 1rem;
   display: flex;

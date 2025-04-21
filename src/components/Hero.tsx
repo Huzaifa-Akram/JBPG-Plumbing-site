@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./Hero.module.css";
 import Image from "next/image";
 
@@ -68,9 +69,9 @@ const Hero = () => {
               </div>
             </div>
             <div className={styles.buttonContainer}>
-              <a href="/contact" className={styles.contactButton}>
+              <Link href="/contact-us" className={styles.contactButton}>
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>

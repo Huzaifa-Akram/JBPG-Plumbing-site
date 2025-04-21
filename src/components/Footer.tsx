@@ -119,44 +119,29 @@ const Footer: React.FC = () => {
             <h3 className={styles.footerHeading}>Our Services</h3>
             <ul className={styles.footerLinks}>
               <li>
-                <SmoothScrollLink
-                  href="/#services"
-                  className={styles.footerLink}
-                >
+                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
                   Plumbing
-                </SmoothScrollLink>
+                </span>
               </li>
               <li>
-                <SmoothScrollLink
-                  href="/#services"
-                  className={styles.footerLink}
-                >
+                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
                   Gas & Boiler Installations
-                </SmoothScrollLink>
+                </span>
               </li>
               <li>
-                <SmoothScrollLink
-                  href="/#services"
-                  className={styles.footerLink}
-                >
+                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
                   Boiler Servicing
-                </SmoothScrollLink>
+                </span>
               </li>
               <li>
-                <SmoothScrollLink
-                  href="/#services"
-                  className={styles.footerLink}
-                >
+                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
                   Leaks Repair
-                </SmoothScrollLink>
+                </span>
               </li>
               <li>
-                <SmoothScrollLink
-                  href="/#services"
-                  className={styles.footerLink}
-                >
+                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
                   Power Flushing
-                </SmoothScrollLink>
+                </span>
               </li>
             </ul>
           </div>

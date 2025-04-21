@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import CallUsNowButton from "./CallUsNowButton";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { BlogLink } from "./NavbarClientWrapper";
 
 const Navbar = () => {
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const pathname = usePathname();
+  const router = useRouter();
   const isHomePage = pathname === "/";
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const Navbar = () => {
     if (isHomePage) {
       scrollToSection(sectionId);
     } else {
-      window.location.href = `/#${sectionId}`;
+      router.push(`/#${sectionId}`);
     }
   };
 
@@ -60,7 +61,7 @@ const Navbar = () => {
     if (isHomePage) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      window.location.href = "/";
+      router.push("/");
     }
 
     if (isMenuOpen) {
