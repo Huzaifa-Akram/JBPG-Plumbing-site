@@ -1,28 +1,69 @@
-import React from "react";
-import { Metadata } from "next";
+"use client";
+// src/app/blog/page.tsx
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { blogPosts, BlogPost } from "../../data/blogData";
+import BlogList from "../../components/BlogList";
+import BlogDetail from "../../components/BlogDetail";
+import styles from "./BlogPage.module.css";
 
-export const metadata: Metadata = {
-  title: "Blog | JBPHS Plumbing & Heating Services",
-  description:
-    "Latest news, tips, and updates from the plumbing and heating experts.",
+// Create a client component that uses useSearchParams
+const BlogContent = () => {
+  const searchParams = useSearchParams();
+  const slug = searchParams?.get("slug") || null;
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
+  useEffect(() => {
+    if (slug) {
+      const post = blogPosts.find((post) => post.slug === slug);
+      setSelectedPost(post || null);
+    } else {
+      setSelectedPost(null);
+    }
+  }, [slug]);
+
+  const handleBack = () => {
+    // Clear the slug from the URL
+    const url = new URL(window.location.href);
+    url.searchParams.delete("slug");
+    window.history.pushState({}, "", url);
+    setSelectedPost(null);
+  };
+
+  return (
+    <>
+      {!selectedPost ? (
+        <>
+          <h1 className={styles.pageTitle}>Our Blog</h1>
+          <div className={styles.introCard}>
+            <h2 className={styles.introTitle}>
+              Welcome to Our Plumbing Knowledge Hub!
+            </h2>
+            <p className={styles.introText}>
+              Discover expert tips, comprehensive guides, and solutions for all
+              your plumbing needs. Whether you&apos;re a homeowner or a
+              professional, our blog provides valuable insights to help you
+              tackle any plumbing challenge.
+            </p>
+          </div>
+
+          <BlogList />
+        </>
+      ) : (
+        <BlogDetail post={selectedPost} onBack={handleBack} />
+      )}
+    </>
+  );
 };
 
+// Main component with Suspense boundary
 const BlogPage = () => {
   return (
-    <div className="pt-24 pb-12 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">
-          Our Blog
-        </h1>
-        <div className="bg-blue-50 p-8 rounded-lg text-center">
-          <h2 className="text-xl md:text-2xl font-semibold mb-4">
-            Coming Soon!
-          </h2>
-          <p className="text-gray-600">
-            We&apos;re working on some great content for our blog. Check back
-            soon for plumbing tips, heating advice, and more!
-          </p>
-        </div>
+    <div className={styles.blogPage}>
+      <div className={styles.container}>
+        <Suspense fallback={<div className={styles.loading}>Loading...</div>}>
+          <BlogContent />
+        </Suspense>
       </div>
     </div>
   );

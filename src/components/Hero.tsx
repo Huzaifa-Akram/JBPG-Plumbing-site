@@ -16,9 +16,13 @@ const Hero = () => {
           </div>
 
           <h1 className={styles.heroTitle}>
-            <span className={styles.professional}>Professional</span> Plumbing
-            <br />
-            Services <span className={styles.accent}>For Your Home &</span>
+            <span className={styles.professional}>Professional</span>{" "}
+            <span className={styles.plumbingServices}>
+              Plumbing
+              <br />
+              Services
+            </span>{" "}
+            <span className={styles.accent}>For Your Home &</span>
             <br />
             <span className={styles.accent}>Business</span>
           </h1>
