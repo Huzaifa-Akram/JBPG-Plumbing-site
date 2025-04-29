@@ -2,23 +2,16 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 
-interface ContactProps {
-  phoneNumber?: string;
-  email?: string;
-  address?: string;
-  termsUrl?: string;
-  privacyUrl?: string;
-}
-
-const Contact: React.FC<ContactProps> = ({
-  phoneNumber = "+49 011223344",
-  email = "jbphs@gmail.com",
-  address = "East London",
-  termsUrl = "/terms-conditions",
-  privacyUrl = "/privacy-policy",
-}) => {
+const Contact: React.FC = () => {
   // Add client-side only state to prevent hydration mismatch
   const [isClient, setIsClient] = useState(false);
+
+  // Static contact information
+  const phoneNumber = "+49 2036332827";
+  const email = "info@jphs.co.uk";
+  const address = "East London";
+  const termsUrl = "/terms-conditions";
+  const privacyUrl = "/privacy-policy";
 
   // All other state remains the same
   const [formData, setFormData] = useState({

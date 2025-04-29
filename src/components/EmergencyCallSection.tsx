@@ -12,7 +12,7 @@ const EmergencyCallSection: React.FC<EmergencyCallSectionProps> = ({
   title = "24/7 Emergency Call",
   description = "Have a burst pipe or broken boiler. There is no need to panic, we are here to fix the problem.",
   buttonText = "Call Us Now",
-  phoneNumber = "+1234567890",
+  phoneNumber = "+442036332827",
 }) => {
   return (
     <section className={styles.emergencyCallSection}>

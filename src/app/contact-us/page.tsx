@@ -1,5 +1,5 @@
 import React from "react";
-import ContactPage from "@/components/ContactPage";
+import Contact from "@/components/Contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactUsPage() {
-  return <ContactPage />;
+  return <Contact />;
 }
