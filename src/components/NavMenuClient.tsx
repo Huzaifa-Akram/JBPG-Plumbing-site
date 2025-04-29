@@ -101,7 +101,7 @@ export function MobileControls() {
   return (
     <div className="flex items-center lg:hidden">
       <Link
-        href="tel:02036332827"
+        href="tel:+442036332827"
         className="mr-3"
         onClick={() => {
           if (isMenuOpen) {

@@ -29,10 +29,10 @@ export default function Home() {
         title="24/7 Emergency Call"
         description="Have a burst pipe or broken boiler? There is no need to panic, we are here to fix the problem."
         buttonText="Call Us Now"
-        phoneNumber="+441234567890"
+        phoneNumber="+442036332827"
       />
       <FAQs faqs={faqsData} />
-      <WhatsAppButton phoneNumber="447000000000" />
+      <WhatsAppButton phoneNumber="+442036332827" />
     </main>
   );
 }
