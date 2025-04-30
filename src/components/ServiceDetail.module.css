@@ -1,0 +1,170 @@
+/* ServiceDetail.module.css */
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.serviceDetailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contentSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #193766;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.serviceTypesContainer {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0 1.5rem;
+}
+
+.serviceTypesTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #193766;
+  margin-bottom: 1.25rem;
+}
+
+.serviceTypesList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+}
+
+.serviceTypeItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  color: #2d3748;
+  padding: 0.25rem 0;
+  line-height: 1.4;
+}
+
+.benefitsContainer {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin: 1rem 0 2rem;
+}
+
+.benefitsTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #193766;
+  margin-bottom: 1.25rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  color: #2d3748;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+}
+
+.imageSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.ctaContainer {
+  margin-top: 1rem;
+}
+
+.emergencySection {
+  margin-top: 4rem;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .serviceDetailWrapper {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .contentSection {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .imageSection {
+    flex: 1;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .serviceTypesList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .serviceDetailWrapper {
+    gap: 4rem;
+  }
+}

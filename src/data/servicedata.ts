@@ -6,6 +6,26 @@ export const serviceData = [
     icon: "Plumbing",
     description: "Experts in all [Plumbing Repairs] in London.",
     highlightedText: ["Plumbing Repairs"],
+    slug: "plumbing",
+    fullDescription:
+      "Our expert plumbing team provides comprehensive solutions for all your plumbing needs in London. From minor repairs to major installations, we handle everything with precision and care. We specialize in fixing leaks, installing new fixtures, repairing damaged pipes, and maintaining plumbing systems to ensure they run efficiently.",
+    benefits: [
+      "24/7 emergency plumbing services",
+      "Fully qualified and insured plumbers",
+      "Transparent pricing with no hidden fees",
+      "Guaranteed workmanship on all repairs",
+      "Quick response times throughout London",
+    ],
+    image: "plumber-img.svg",
+    serviceTypes: [
+      "General Plumbing",
+      "Basin Installation",
+      "Tap Repair & Installation",
+      "Radiator Installation",
+      "Shower Installation",
+      "Toilet Repair & Installation",
+      "Burst Pipe",
+    ],
   },
   {
     id: 2,
@@ -13,6 +33,26 @@ export const serviceData = [
     icon: "Boiler-Installations",
     description: "Boiler Installations with up to [12 years warranty].",
     highlightedText: ["12 years warranty"],
+    slug: "boiler-installations",
+    fullDescription:
+      "We provide professional boiler installation services with industry-leading warranties of up to 12 years. Our certified engineers ensure your new boiler is installed to the highest standards, optimizing energy efficiency and performance. We work with top manufacturers to provide you with reliable, efficient heating solutions.",
+    benefits: [
+      "Up to 12-year manufacturer warranties",
+      "Energy-efficient models to reduce bills",
+      "Gas Safe registered engineers",
+      "Flexible payment options available",
+      "Complete system design and installation",
+    ],
+    image: "Boiler-Installations.svg",
+    serviceTypes: [
+      "New Boiler Installation",
+      "Boiler Replacement",
+      "System Conversion",
+      "Smart Thermostat Installation",
+      "Combi Boiler Installation",
+      "System Boiler Installation",
+      "Regular Boiler Installation",
+    ],
   },
   {
     id: 3,
@@ -21,6 +61,26 @@ export const serviceData = [
     description:
       "We undertake all boiler servicing [installations, repairs & servicing]",
     highlightedText: ["installations, repairs & servicing"],
+    slug: "boiler-servicing",
+    fullDescription:
+      "Regular boiler servicing is essential to maintain efficiency and prevent breakdowns. Our comprehensive boiler servicing includes thorough inspection, cleaning, and testing to ensure your heating system operates safely and efficiently. We service all major boiler brands and models.",
+    benefits: [
+      "Extends the lifespan of your boiler",
+      "Improves energy efficiency and reduces bills",
+      "Identifies potential issues before they become major problems",
+      "Maintains manufacturer warranty validity",
+      "Ensures safe operation and prevents carbon monoxide risks",
+    ],
+    image: "Boiler-Servicing.svg",
+    serviceTypes: [
+      "Boiler Service",
+      "Boiler Repair",
+      "Annual Maintenance",
+      "Fault Diagnosis",
+      "Component Replacement",
+      "Performance Testing",
+      "Safety Checks",
+    ],
   },
   {
     id: 4,
@@ -29,6 +89,26 @@ export const serviceData = [
     description:
       "Cracked or broken toilet, we can install a new one within [24 hours].",
     highlightedText: ["24 hours"],
+    slug: "replacement-toilet",
+    fullDescription:
+      "When you need a toilet replacement, our rapid response team can install a new one within 24 hours. We offer a wide selection of modern, water-efficient toilets and provide professional installation service. Our plumbers will remove your old toilet and ensure the new one is perfectly fitted and fully functional.",
+    benefits: [
+      "Rapid 24-hour installation service",
+      "Wide range of toilet styles and designs",
+      "Water-saving options available",
+      "Complete removal and disposal of old unit",
+      "Clean and tidy installation process",
+    ],
+    image: "Replacement-Toilet.svg",
+    serviceTypes: [
+      "Toilet Replacement",
+      "Toilet Repair",
+      "Toilet Installation",
+      "Cistern Replacement",
+      "Close-Coupled Toilet Installation",
+      "Back-to-Wall Toilet Installation",
+      "Wall-Hung Toilet Installation",
+    ],
   },
   {
     id: 5,
@@ -36,6 +116,26 @@ export const serviceData = [
     icon: "Leaks-Repair",
     description: "Leaking problems? We can repair [all types of leaking].",
     highlightedText: ["all types of leaking"],
+    slug: "leaking-repair",
+    fullDescription:
+      "Our leak repair specialists can quickly identify and fix all types of leaks in your home or business. From dripping faucets to hidden pipe leaks, we use advanced detection equipment and proven repair techniques. We address the problem at its source to prevent recurrence and potential water damage.",
+    benefits: [
+      "Advanced leak detection technology",
+      "Non-destructive repair methods when possible",
+      "Prevention of water damage and mold",
+      "Solutions for both visible and hidden leaks",
+      "Emergency response for serious leaks",
+    ],
+    image: "Leaks-Repair.svg",
+    serviceTypes: [
+      "Pipe Leak Repair",
+      "Tap Leak Repair",
+      "Shower Leak Repair",
+      "Toilet Leak Repair",
+      "Burst Pipe Emergency Repair",
+      "Leak Detection Services",
+      "Water Damage Prevention",
+    ],
   },
   {
     id: 6,
@@ -44,6 +144,26 @@ export const serviceData = [
     description:
       "Professional workers for [efficient, safe, and reliable] home heating.",
     highlightedText: ["efficient, safe, and reliable"],
+    slug: "gas-boiler-installations",
+    fullDescription:
+      "Our Gas Safe registered engineers provide comprehensive gas and boiler installation services, ensuring efficient, safe, and reliable home heating. We handle all aspects of installation, from system design to final commissioning, following all safety regulations and industry best practices.",
+    benefits: [
+      "Gas Safe registered engineers",
+      "Complete system design service",
+      "Range of high-efficiency boilers",
+      "Compliance with all safety regulations",
+      "Full system testing and commissioning",
+    ],
+    image: "Gas-&-Boiler-Installations.svg",
+    serviceTypes: [
+      "Landlord Gas Safety Certificates",
+      "Gas Appliance Installation",
+      "Gas Pipe Installation",
+      "Gas Safety Checks",
+      "Carbon Monoxide Detector Installation",
+      "Gas Cooker Installation",
+      "Gas Fire Installation",
+    ],
   },
   {
     id: 7,
@@ -51,6 +171,26 @@ export const serviceData = [
     icon: "Power-Flushing",
     description: "Power flushing and for [clean pipes and smooth flow].",
     highlightedText: ["clean pipes and smooth flow"],
+    slug: "power-flushing",
+    fullDescription:
+      "Power flushing removes sludge, rust, and debris from your heating system, restoring efficiency and extending system life. Our specialized equipment thoroughly cleans your entire heating system, improving heat distribution and reducing energy consumption. This maintenance service is essential for older heating systems and can resolve many common heating issues.",
+    benefits: [
+      "Improves heating efficiency",
+      "Extends system lifespan",
+      "Reduces energy bills",
+      "Eliminates cold spots in radiators",
+      "Decreases system noise",
+    ],
+    image: "Power-Flushing.svg",
+    serviceTypes: [
+      "Full System Power Flush",
+      "Individual Radiator Power Flush",
+      "Chemical System Clean",
+      "Magnetic Filter Installation",
+      "Central Heating System Power Flush",
+      "System Maintenance",
+      "Heating Performance Improvement",
+    ],
   },
   {
     id: 8,
@@ -59,5 +199,25 @@ export const serviceData = [
     description:
       "We can help take the chill off. We install & replace [all radiator types]",
     highlightedText: ["all radiator types"],
+    slug: "radiators",
+    fullDescription:
+      "Our radiator installation and replacement service covers all radiator types for efficient home heating. Whether you need modern designer radiators, traditional column radiators, or energy-efficient models, our team ensures proper installation and optimal performance. We can also advise on the best radiator types and sizes for your space.",
+    benefits: [
+      "Installation of all radiator types and styles",
+      "System balancing for even heat distribution",
+      "Thermostatic valve installation for better control",
+      "Expert advice on radiator selection",
+      "Removal and recycling of old radiators",
+    ],
+    image: "Radiators.svg",
+    serviceTypes: [
+      "Radiator Installation",
+      "Radiator Replacement",
+      "Radiator Valve Replacement",
+      "Radiator Bleeding",
+      "Radiator Balancing",
+      "Designer Radiator Installation",
+      "Thermostatic Radiator Valve Installation",
+    ],
   },
 ];

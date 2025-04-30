@@ -73,11 +73,55 @@
   line-height: 1.5;
   text-align: center;
   margin: 0;
+  margin-bottom: 1.25rem;
 }
 
 .highlight {
   color: #4caf50; /* Green highlight color as shown in the image */
   font-weight: 500;
+}
+
+.serviceCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.readMoreWrapper {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.readMore {
+  color: #193766;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.readMore:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #193766;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.serviceCardLink:hover .readMore {
+  color: #1e4b8d;
+}
+
+.serviceCardLink:hover .readMore:after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 @keyframes fadeInUp {
