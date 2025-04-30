@@ -27,7 +27,7 @@ const Services: React.FC = () => {
               description={service.description}
               highlightedText={service.highlightedText}
               index={index}
-              slug={service.slug} // Pass the slug to the ServiceCard
+              id={service.id} // Pass id instead of slug
             />
           ))}
         </div>

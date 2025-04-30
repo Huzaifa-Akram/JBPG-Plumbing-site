@@ -117,13 +117,14 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
 }
 
 .serviceImage {
   width: 100%;
   height: auto;
   object-fit: contain;
+  background-color: transparent;
 }
 
 .ctaContainer {

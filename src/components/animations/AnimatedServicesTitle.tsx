@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import styles from "../Services.module.css";
 
 interface AnimatedServicesTitleProps {
   children: React.ReactNode;

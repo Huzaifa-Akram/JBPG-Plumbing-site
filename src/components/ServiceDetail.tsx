@@ -4,12 +4,12 @@ import styles from "./ServiceDetail.module.css";
 import { serviceData } from "@/data/servicedata";
 
 interface ServiceDetailProps {
-  slug: string;
+  serviceId: number;
 }
 
-const ServiceDetail: React.FC<ServiceDetailProps> = ({ slug }) => {
-  // Find the service with the matching slug
-  const service = serviceData.find((service) => service.slug === slug);
+const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceId }) => {
+  // Find the service with the matching ID
+  const service = serviceData.find((service) => service.id === serviceId);
 
   if (!service) {
     return <div>Service not found</div>;

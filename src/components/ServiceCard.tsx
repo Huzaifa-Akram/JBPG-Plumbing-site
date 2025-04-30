@@ -9,21 +9,21 @@ interface ServiceCardProps {
   icon: string;
   description: string;
   highlightedText: string[];
-  slug: string; // Added slug property
-  index?: number; // Keeping this in the interface for compatibility with existing code
+  id: number; // Changed from slug to id
+  index?: number;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   icon,
   description,
-  slug, // Using the slug for the link
+  id,
 }) => {
   // Create image filename by replacing spaces with hyphens and making lowercase
   const imageFileName = icon;
 
   return (
-    <Link href={`/services/${slug}`} className={styles.serviceCardLink}>
+    <Link href={`/services/service${id}`} className={styles.serviceCardLink}>
       <div className={styles.serviceCard}>
         <div className={styles.iconContainer}>
           <Image
