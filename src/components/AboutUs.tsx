@@ -4,11 +4,9 @@ import Image from "next/image";
 
 const AboutUs = () => {
   const mainParagraph =
-    "When summer's heat rolls in, your home still deserves comfort without the drama. At JB Plumbing & Heating Specialists, we've been London's trusted heating and plumbing experts for over 20 years, the team you call when you want service that's fast, friendly, and flawless. Whether it's a boiler check-up before winter, a sudden leak in July, or upgrading to a smarter system, we make it simple with no jargon and no surprises.";
-
+    "Reliable Plumbing & Heating Services in East London – No Drama, Just Solutions When summer’s heat hits East London, your home deserves cool comfort without the chaos. At JB Plumbing & Heating Specialists, we’ve been the go-to experts for over 20 years, delivering fast, friendly, and flawless service—because your comfort shouldn’t depend on luck.";
   const secondaryParagraph =
-    "Your comfort shouldn't depend on luck. That's why we warranty every repair and only recommend services we'd trust in our own homes, because reliable plumbing and heating should be effortless, year-round.";
-
+    "Whether you need a boiler service before winter, an urgent leak repair in July, or a smart heating upgrade, we keep things simple, honest, and stress-free. No jargon. No surprises. Just trusted solutions for homes and businesses across Stratford, Canary Wharf, Walthamstow, and beyond.";
   return (
     <section className={styles.aboutUsSection} id="about-us">
       <div className={styles.container}>
@@ -66,16 +64,16 @@ const AboutUs = () => {
               </div>
             </div>
 
-            {/* <div className={styles.ctaWrapper}>
+            <div className={styles.ctaWrapper}>
               <a
-                href="/services"
+                href="tel:+442036332827"
                 className={styles.ctaButton}
-                aria-label="Read more about our services"
+                aria-label="Need help? Call us now!"
               >
-                Read More
+                Call Us Now
                 <span className={styles.arrowIcon}>→</span>
               </a>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

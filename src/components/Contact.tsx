@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
 
   // Static contact information
-  const phoneNumber = "+49 2036332827";
+  const phoneNumber = "+44 2036332827";
   const email = "info@jphs.co.uk";
   const address = "East London";
   const termsUrl = "/terms-conditions";
@@ -272,41 +272,13 @@ const Contact: React.FC = () => {
             <h3 className={styles.contactSubtitle}>Get in Touch</h3>
 
             <form onSubmit={handleSubmit}>
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="First Name"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                    className={styles.formInput}
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                    className={styles.formInput}
-                  />
-                </div>
-              </div>
-
               <div className={styles.formGroup}>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                  value={formData.email}
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={formData.firstName}
                   onChange={handleChange}
                   required
                   className={styles.formInput}
@@ -322,45 +294,32 @@ const Contact: React.FC = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className={styles.formInput}
+                  required
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email  (optional)"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={styles.formInput}
                 />
               </div>
 
               <div className={styles.formGroup}>
                 <input
                   type="text"
-                  id="address"
-                  name="address"
-                  placeholder="Address"
-                  value={formData.address}
+                  id="postalCode"
+                  name="postalCode"
+                  placeholder="Postal Code (optional)"
+                  value={formData.postalCode}
                   onChange={handleChange}
                   className={styles.formInput}
                 />
-              </div>
-
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <input
-                    type="text"
-                    id="city"
-                    name="city"
-                    placeholder="City"
-                    value={formData.city}
-                    onChange={handleChange}
-                    className={styles.formInput}
-                  />
-                </div>
-
-                <div className={styles.formGroup}>
-                  <input
-                    type="text"
-                    id="postalCode"
-                    name="postalCode"
-                    placeholder="Postal Code (optional)"
-                    value={formData.postalCode}
-                    onChange={handleChange}
-                    className={styles.formInput}
-                  />
-                </div>
               </div>
 
               <div className={styles.formGroup}>
@@ -373,31 +332,6 @@ const Contact: React.FC = () => {
                   required
                   className={styles.formTextarea}
                 ></textarea>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label className={styles.checkboxLabel}>
-                  <input
-                    type="checkbox"
-                    name="agreeToTerms"
-                    checked={formData.agreeToTerms}
-                    onChange={handleCheckboxChange}
-                    required
-                    className={styles.formCheckbox}
-                  />
-                  <span>I agree to the below conditions</span>
-                </label>
-              </div>
-
-              <div className={styles.termsText}>
-                By continuing you agree to the website{" "}
-                <a href={termsUrl} className={styles.termsLink}>
-                  terms & conditions
-                </a>{" "}
-                and{" "}
-                <a href={privacyUrl} className={styles.termsLink}>
-                  privacy policy
-                </a>
               </div>
 
               <div className={styles.formGroup}>
