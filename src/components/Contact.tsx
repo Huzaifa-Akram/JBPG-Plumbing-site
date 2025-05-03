@@ -10,8 +10,6 @@ const Contact: React.FC = () => {
   const phoneNumber = "+44 2036332827";
   const email = "info@jphs.co.uk";
   const address = "East London";
-  const termsUrl = "/terms-conditions";
-  const privacyUrl = "/privacy-policy";
 
   // All other state remains the same
   const [formData, setFormData] = useState({
@@ -43,13 +41,6 @@ const Contact: React.FC = () => {
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
-    }));
-  };
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      agreeToTerms: e.target.checked,
     }));
   };
 
