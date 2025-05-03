@@ -70,7 +70,7 @@ const AboutUs = () => {
                 className={styles.ctaButton}
                 aria-label="Need help? Call us now!"
               >
-                Call Us Now
+                Need help? Call Us Now
                 <span className={styles.arrowIcon}>→</span>
               </a>
             </div>
