@@ -117,29 +117,29 @@ const Footer: React.FC = () => {
             <h3 className={styles.footerHeading}>Our Services</h3>
             <ul className={styles.footerLinks}>
               <li>
-                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
+                <Link href="/services/service1" className={styles.footerLink}>
                   Plumbing
-                </span>
+                </Link>
               </li>
               <li>
-                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
+                <Link href="/services/service6" className={styles.footerLink}>
                   Gas & Boiler Installations
-                </span>
+                </Link>
               </li>
               <li>
-                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
+                <Link href="/services/service3" className={styles.footerLink}>
                   Boiler Servicing
-                </span>
+                </Link>
               </li>
               <li>
-                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
+                <Link href="/services/service5" className={styles.footerLink}>
                   Leaks Repair
-                </span>
+                </Link>
               </li>
               <li>
-                <span className={`${styles.footerLink} ${styles.serviceItem}`}>
+                <Link href="/services/service7" className={styles.footerLink}>
                   Power Flushing
-                </span>
+                </Link>
               </li>
             </ul>
           </div>
